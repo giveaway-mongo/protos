@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package auth;
+
+import "auth/auth.proto";
+
+service AuthService {
+  rpc SignIn(SignInRequest) returns (SignInResponse) {}
+  rpc SignUp(SignUpRequest) returns (SignUpResponse) {}
+  rpc VerifyEmailToken(VerifyEmailTokenRequest) returns (VerifyEmailTokenResponse) {}
+}

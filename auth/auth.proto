@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package auth;
+
+import "common/common.proto";
+
+message SignInRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message SignInResponse {
+  string email = 1;
+  string password = 2;
+  repeated common.Error errors = 3;
+}
+
+message SignUpRequest {
+  string full_name = 1;
+  string email = 2;
+  string phone_number = 3;
+  string password = 4;
+}
+
+
+message SignUpResponse {
+  repeated common.Error errors = 1;
+}
+
+message VerifyEmailTokenRequest {
+  string email = 1;
+  string verification_code = 2;
+}
+
+message VerifyEmailTokenResponse {
+  repeated common.Error errors = 1;
+}
