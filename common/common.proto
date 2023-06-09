@@ -18,5 +18,5 @@ message Error {
   repeated string location = 1;
   string message = 2;
   string type = 3;
-  repeated string nonFieldError = 4;
+  repeated string nonFieldErrors = 4;
 }

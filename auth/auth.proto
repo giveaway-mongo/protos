@@ -10,9 +10,14 @@ message SignInRequest {
 }
 
 message SignInResponse {
-  string email = 1;
-  string password = 2;
-  repeated common.Error errors = 3;
+  message Result {
+    string email = 1;
+    string access_token = 2;
+    string refresh_token = 3;
+  }
+
+  Result result = 1;
+  repeated common.Error errors = 2;
 }
 
 message SignUpRequest {
@@ -28,8 +33,8 @@ message SignUpResponse {
 }
 
 message VerifyEmailTokenRequest {
-  string email = 1;
-  string verification_code = 2;
+  string guid = 1;
+  string verification_token = 2;
 }
 
 message VerifyEmailTokenResponse {
