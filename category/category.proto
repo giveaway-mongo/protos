@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package category;
+
+import "common/common.proto";
+
+message Category {
+  string guid = 1;
+  string title = 2;
+  string description = 3;
+}
+
+message CategoryCreateRequest {
+  string title = 1;
+  string description = 2;
+}
+
+message CategoryCreateResponse {
+  Category result = 1;
+  repeated common.Error errors = 2;
+}
+
+message CategoryUpdateRequest {
+  string guid = 1;
+  string title = 2;
+  string description = 3;
+}
+
+message CategoryUpdateResponse {
+  Category result = 1;
+  repeated common.Error errors = 2;
+}
+
+message CategoryDeleteRequest {
+  string guid = 1;
+}
+
+message CategoryDeleteResponse {
+  repeated common.Error errors = 1;
+}
+
+message CategoryDetailRequest {
+  string guid = 1;
+}
+
+message CategoryDetailResponse {
+  Category result = 1;
+  repeated common.Error errors = 2;
+}
+
+message CategoryListRequest {
+  common.ListOptions options = 1;
+}
+
+message CategoryListResponse {
+  repeated Category results = 1;
+  int64 count = 2;
+  repeated common.Error errors = 3;
+}
+
