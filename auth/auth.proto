@@ -17,7 +17,7 @@ message SignInResponse {
   }
 
   Result result = 1;
-  repeated common.Error errors = 2;
+  common.Error errors = 2;
 }
 
 message SignUpRequest {
@@ -29,7 +29,7 @@ message SignUpRequest {
 
 
 message SignUpResponse {
-  repeated common.Error errors = 1;
+  common.Error errors = 1;
 }
 
 message VerifyEmailTokenRequest {
@@ -38,5 +38,5 @@ message VerifyEmailTokenRequest {
 }
 
 message VerifyEmailTokenResponse {
-  repeated common.Error errors = 1;
+  common.Error errors = 1;
 }

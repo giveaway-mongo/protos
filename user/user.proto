@@ -20,7 +20,7 @@ message UserCreateRequest {
 
 message UserCreateResponse {
   User result = 1;
-  repeated common.Error errors = 2;
+  common.Error errors = 2;
 }
 
 message UserUpdateRequest {
@@ -31,7 +31,7 @@ message UserUpdateRequest {
 
 message UserUpdateResponse {
   User result = 1;
-  repeated common.Error errors = 2;
+  common.Error errors = 2;
 }
 
 message UserListRequest {
@@ -41,7 +41,7 @@ message UserListRequest {
 message UserListResponse {
   repeated User results = 1;
   int64 count = 2;
-  repeated common.Error errors = 3;
+  common.Error errors = 3;
 }
 
 message UserDetailRequest {
@@ -50,5 +50,5 @@ message UserDetailRequest {
 
 message UserDetailResponse {
   User result = 1;
-  repeated common.Error errors = 2;
+  common.Error errors = 2;
 }
