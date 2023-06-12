@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-
 package sample;
 
 import "common/common.proto";
@@ -18,7 +17,7 @@ message SampleCreateRequest {
 
 message SampleCreateResponse {
   Sample result = 1;
-  repeated common.Error errors = 2;
+  common.Error errors = 2;
 }
 
 message SampleUpdateRequest {
@@ -29,7 +28,7 @@ message SampleUpdateRequest {
 
 message SampleUpdateResponse {
   Sample result = 1;
-  repeated common.Error errors = 2;
+  common.Error errors = 2;
 }
 
 message SampleDetailRequest {
@@ -38,7 +37,7 @@ message SampleDetailRequest {
 
 message SampleDetailResponse {
   Sample result = 1;
-  repeated common.Error errors = 2;
+  common.Error errors = 2;
 }
 
 message SampleListRequest {
@@ -48,5 +47,5 @@ message SampleListRequest {
 message SampleListResponse {
   repeated Sample results = 1;
   int64 count = 2;
-  repeated common.Error errors = 3;
+  common.Error errors = 3;
 }

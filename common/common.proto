@@ -14,9 +14,14 @@ message ListOptions {
   int64 limit = 5;
 }
 
-message Error {
+message FieldError {
   repeated string location = 1;
   string message = 2;
   string type = 3;
-  repeated string nonFieldError = 4;
+}
+
+message Error {
+  repeated FieldError fieldErrors = 1;
+  repeated string nonFieldErrors = 2;
+  int32 errorCode = 3;
 }
