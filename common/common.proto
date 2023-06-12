@@ -23,4 +23,5 @@ message FieldError {
 message Error {
   repeated FieldError fieldErrors = 1;
   repeated string nonFieldErrors = 2;
+  int32 errorCode = 3;
 }
