@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package broker;
+
+import "deal/deal.proto";
+
+// deal.deal.add: when create deal
+// deal.deal.change: when change deal
+
+message Deal {
+  string guid = 1;
+  string title = 2;
+  string description = 3;
+  string contact_method = 4;
+  string active_until = 5;
+  string type = 6;
+  string status = 7;
+  deal.User owner = 8;
+  repeated deal.Bid bids = 9;
+  repeated deal.Review reviews = 10;
+  deal.User reported_by = 11;
+  string category = 12;
+  repeated string photos = 13;
+  string createdAt = 14;
+  string updatedAt = 15;
+}
+
+
+

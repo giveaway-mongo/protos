@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package deal;
+import "deal/deal.proto";
+
+service DealsService {
+  rpc CreateDeal(DealCreateRequest) returns (DealCreateResponse) {}
+  rpc UpdateDeal(DealUpdateRequest) returns (DealUpdateResponse) {}
+  rpc DetailDeal(DealDetailRequest) returns (DealDetailResponse) {}
+  rpc ListDeal(DealListRequest) returns (DealListResponse) {}
+}
