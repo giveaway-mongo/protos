@@ -5,8 +5,8 @@ package deal;
 import "common/common.proto";
 
 message User {
-  string name = 1;
-  string fullName = 2;
+  string firstName = 1;
+  string lastName = 2;
   string phoneNumber = 3;
 }
 
