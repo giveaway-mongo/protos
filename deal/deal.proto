@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package deal;
+
+import "common/common.proto";
+
+message User {
+  string firstName = 1;
+  string lastName = 2;
+  string phoneNumber = 3;
+}
+
+message Bid {
+  string bid = 1;
+  string userId = 2;
+  string order = 3;
+}
+
+message Review {
+  string userId = 1;
+  string review = 2;
+}
+
+message Category {
+  string guid = 1;
+  string title = 2;
+  string description = 3;
+  string parentId = 4;
+}
+
+message Deal {
+  string guid = 1;
+  string title = 2;
+  string description = 3;
+  string contactMethod = 4;
+  string activeUntil = 5;
+  string type = 6;
+  string status = 7;
+  User owner = 8;
+  repeated Bid bids = 9;
+  repeated Review reviews = 10;
+  User reportedBy = 11;
+  Category category = 12;
+  repeated string photos = 13;
+}
+
+message DealCreateRequest {
+  string title = 1;
+  string description = 2;
+  string contactMethod = 3;
+  string activeUntil = 4;
+  string type = 5;
+  string status = 6;
+  User owner = 7;
+  repeated Bid bids = 8;
+  repeated Review reviews = 9;
+  User reportedBy = 10;
+  Category category = 11;
+  repeated string photos = 12;
+}
+
+message DealCreateResponse {
+  Deal result = 1;
+  common.Error errors = 2;
+}
+
+message DealUpdateRequest {
+  string guid = 1;
+  string title = 2;
+  string description = 3;
+  string contactMethod = 4;
+  string activeUntil = 5;
+  string type = 6;
+  string status = 7;
+  User owner = 8;
+  repeated Bid bids = 9;
+  repeated Review reviews = 10;
+  User reportedBy = 11;
+  Category category = 12;
+  repeated string photos = 13;
+}
+
+message DealUpdateResponse {
+  Deal result = 1;
+  common.Error errors = 2;
+}
+
+message DealDetailRequest {
+  string guid = 1;
+}
+
+message DealDetailResponse {
+  Deal result = 1;
+  common.Error errors = 2;
+}
+
+message DealListRequest {
+  common.ListOptions options = 1;
+}
+
+message DealListResponse {
+  repeated Deal results = 1;
+  int64 count = 2;
+  common.Error errors = 3;
+}

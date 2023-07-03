@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package category;
+import "category/category.proto";
+
+service CategoriesService {
+  rpc CreateCategory(CategoryCreateRequest) returns (CategoryCreateResponse) {}
+  rpc UpdateCategory(CategoryUpdateRequest) returns (CategoryUpdateResponse) {}
+  rpc DeleteCategory(CategoryDeleteRequest) returns (CategoryDeleteResponse) {}
+  rpc DetailCategory(CategoryDetailRequest) returns (CategoryDetailResponse) {}
+  rpc ListCategory(CategoryListRequest) returns (CategoryListResponse) {}
+}
