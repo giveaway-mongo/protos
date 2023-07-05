@@ -12,12 +12,12 @@ message User {
 
 message Bid {
   string bid = 1;
-  string userId = 2;
+  string user_guid = 2;
   string order = 3;
 }
 
 message Review {
-  string userId = 1;
+  string user_guid = 1;
   string review = 2;
 }
 
@@ -45,27 +45,7 @@ message Deal {
 }
 
 message DealCreateRequest {
-  string title = 1;
-  string description = 2;
-  string contactMethod = 3;
-  string activeUntil = 4;
-  string type = 5;
-  string status = 6;
-  User owner = 7;
-  repeated Bid bids = 8;
-  repeated Review reviews = 9;
-  User reportedBy = 10;
-  Category category = 11;
-  repeated string photos = 12;
-}
-
-message DealCreateResponse {
-  Deal result = 1;
-  common.Error errors = 2;
-}
-
-message DealUpdateRequest {
-  string guid = 1;
+  string user_guid = 1;
   string title = 2;
   string description = 3;
   string contactMethod = 4;
@@ -78,6 +58,28 @@ message DealUpdateRequest {
   User reportedBy = 11;
   Category category = 12;
   repeated string photos = 13;
+}
+
+message DealCreateResponse {
+  Deal result = 1;
+  common.Error errors = 2;
+}
+
+message DealUpdateRequest {
+  string user_guid = 1;
+  string guid = 2;
+  string title = 3;
+  string description = 4;
+  string contactMethod = 5;
+  string activeUntil = 6;
+  string type = 7;
+  string status = 8;
+  User owner = 9;
+  repeated Bid bids = 10;
+  repeated Review reviews = 11;
+  User reportedBy = 12;
+  Category category = 13;
+  repeated string photos = 14;
 }
 
 message DealUpdateResponse {
