@@ -25,7 +25,7 @@ message Category {
   string guid = 1;
   string title = 2;
   string description = 3;
-  string parentId = 4;
+  string parentGuid = 4;
 }
 
 message Deal {

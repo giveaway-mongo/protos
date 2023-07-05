@@ -8,14 +8,14 @@ message Category {
   string guid = 1;
   string title = 2;
   string description = 3;
-  string parentId = 4;
+  string parentGuid = 4;
 }
 
 message CategoryCreateRequest {
   string user_guid = 1;
   string title = 2;
   string description = 3;
-  string parentId = 4;
+  string parentGuid = 4;
 }
 
 message CategoryCreateResponse {
@@ -28,7 +28,7 @@ message CategoryUpdateRequest {
   string guid = 2;
   string title = 3;
   string description = 4;
-  string parentId = 5;
+  string parentGuid = 5;
 }
 
 message CategoryUpdateResponse {
