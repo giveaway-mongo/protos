@@ -5,19 +5,23 @@ package deal;
 import "common/common.proto";
 
 message User {
-  string firstName = 1;
-  string lastName = 2;
-  string phoneNumber = 3;
+  string userGuid = 1;
+  string fullName = 2;
+  string email = 3;
+  string phoneNumber = 4;
+  int64 bidsAvailable = 5;
+  bool isActive = 6;
+  bool isDeleted = 7;
 }
 
 message Bid {
-  string bid = 1;
-  string userId = 2;
+  string userGuid = 1;
+  string bid = 2;
   string order = 3;
 }
 
 message Review {
-  string userId = 1;
+  string userGuid = 1;
   string review = 2;
 }
 
@@ -25,7 +29,7 @@ message Category {
   string guid = 1;
   string title = 2;
   string description = 3;
-  string parentId = 4;
+  string parentGuid = 4;
 }
 
 message Deal {
@@ -36,12 +40,13 @@ message Deal {
   string activeUntil = 5;
   string type = 6;
   string status = 7;
-  User owner = 8;
-  repeated Bid bids = 9;
-  repeated Review reviews = 10;
-  User reportedBy = 11;
-  Category category = 12;
-  repeated string photos = 13;
+  User author = 8;
+  User buyer = 9;
+  repeated Bid bids = 10;
+  repeated Review reviews = 11;
+  repeated User reportedBy = 12;
+  Category category = 13;
+  repeated string photos = 14;
 }
 
 message DealCreateRequest {
@@ -51,12 +56,13 @@ message DealCreateRequest {
   string activeUntil = 4;
   string type = 5;
   string status = 6;
-  User owner = 7;
-  repeated Bid bids = 8;
-  repeated Review reviews = 9;
-  User reportedBy = 10;
-  Category category = 11;
-  repeated string photos = 12;
+  User author = 7;
+  User buyer = 8;
+  repeated Bid bids = 9;
+  repeated Review reviews = 10;
+  User reportedBy = 11;
+  Category category = 12;
+  repeated string photos = 13;
 }
 
 message DealCreateResponse {
@@ -72,7 +78,7 @@ message DealUpdateRequest {
   string activeUntil = 5;
   string type = 6;
   string status = 7;
-  User owner = 8;
+  User author = 8;
   repeated Bid bids = 9;
   repeated Review reviews = 10;
   User reportedBy = 11;
