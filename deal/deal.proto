@@ -86,6 +86,28 @@ message DealUpdateRequest {
   repeated string photos = 13;
 }
 
+message DealCreateResponse {
+  Deal result = 1;
+  common.Error errors = 2;
+}
+
+message DealUpdateRequest {
+  string user_guid = 1;
+  string guid = 2;
+  string title = 3;
+  string description = 4;
+  string contactMethod = 5;
+  string activeUntil = 6;
+  string type = 7;
+  string status = 8;
+  User owner = 9;
+  repeated Bid bids = 10;
+  repeated Review reviews = 11;
+  User reportedBy = 12;
+  Category category = 13;
+  repeated string photos = 14;
+}
+
 message DealUpdateResponse {
   Deal result = 1;
   common.Error errors = 2;

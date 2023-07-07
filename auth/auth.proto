@@ -29,7 +29,14 @@ message SignUpRequest {
 
 
 message SignUpResponse {
-  common.Error errors = 1;
+  message Result {
+      string guid = 1;
+      string verificationToken = 2;
+      string confirmationLink = 3;
+  }
+
+  Result result = 1;
+  common.Error errors = 2;
 }
 
 message VerifyEmailTokenRequest {
