@@ -6,7 +6,7 @@ package broker;
 // user.user.change: when update user
 
 message User {
-  string id = 1;
+  string guid = 1;
   string email = 2;
   string full_name = 3;
   string avatar_url = 4;

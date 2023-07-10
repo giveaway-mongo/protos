@@ -15,15 +15,12 @@ message Deal {
   string active_until = 5;
   string type = 6;
   string status = 7;
-  deal.User owner = 8;
+  deal.User author = 8;
   repeated deal.Bid bids = 9;
   repeated deal.Review reviews = 10;
-  deal.User reported_by = 11;
-  string category = 12;
+  repeated deal.User reported_by = 11;
+  deal.Category category = 12;
   repeated string photos = 13;
   string createdAt = 14;
   string updatedAt = 15;
 }
-
-
-

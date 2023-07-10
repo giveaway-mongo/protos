@@ -5,7 +5,7 @@ package deal;
 import "common/common.proto";
 
 message User {
-  string userGuid = 1;
+  string guid = 1;
   string fullName = 2;
   string email = 3;
   string phoneNumber = 4;
@@ -60,7 +60,7 @@ message DealCreateRequest {
   User buyer = 8;
   repeated Bid bids = 9;
   repeated Review reviews = 10;
-  User reportedBy = 11;
+  repeated User reportedBy = 11;
   Category category = 12;
   repeated string photos = 13;
 }
@@ -81,7 +81,7 @@ message DealUpdateRequest {
   User author = 8;
   repeated Bid bids = 9;
   repeated Review reviews = 10;
-  User reportedBy = 11;
+  repeated User reportedBy = 11;
   Category category = 12;
   repeated string photos = 13;
 }
