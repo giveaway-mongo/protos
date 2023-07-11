@@ -8,7 +8,11 @@ package broker;
 message User {
   string guid = 1;
   string email = 2;
-  string full_name = 3;
-  string avatar_url = 4;
-  bool   is_active = 5;
+  string fullName = 3;
+  string avatarUrl = 4;
+  string phoneNumber = 5;
+  string role = 6;
+  int64 bidsAvailable = 7;
+  bool   isActive = 8;
+  bool   isDeleted = 9;
 }
