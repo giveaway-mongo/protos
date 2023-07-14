@@ -3,7 +3,8 @@ syntax = "proto3";
 package broker;
 
 message Category {
-  string id = 1;
+  string guid = 1;
   string title = 2;
   string description = 3;
+  string parentGuid = 4;
 }

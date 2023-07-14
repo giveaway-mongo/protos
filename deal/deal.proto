@@ -87,6 +87,7 @@ message DealUpdateRequest {
   repeated User reportedBy = 12;
   Category category = 13;
   repeated string photos = 14;
+  string userGuid = 15;
 }
 
 message DealUpdateResponse {
