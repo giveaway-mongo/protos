@@ -22,4 +22,6 @@ message Deal {
   repeated deal.User reportedBy = 12;
   deal.Category category = 13;
   repeated string photos = 14;
+  string updatedAt = 15;
+  string createdAt = 16;
 }

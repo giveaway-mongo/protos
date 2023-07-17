@@ -15,4 +15,6 @@ message User {
   int64 bidsAvailable = 7;
   bool   isActive = 8;
   bool   isDeleted = 9;
+  string updatedAt = 10;
+  string createdAt = 11;
 }

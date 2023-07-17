@@ -19,7 +19,7 @@ message User {
 message Bid {
   string userGuid = 1;
   string bid = 2;
-  string order = 3;
+  string dateOfBid = 3;
 }
 
 message Review {
@@ -49,6 +49,8 @@ message Deal {
   repeated User reportedBy = 12;
   Category category = 13;
   repeated string photos = 14;
+  string updatedAt = 15;
+  string createdAt = 16;
 }
 
 message DealCreateRequest {
