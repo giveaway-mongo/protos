@@ -19,7 +19,7 @@ message User {
 message Bid {
   string userGuid = 1;
   string bid = 2;
-  string dateOfBid = 3;
+  string order = 3;
 }
 
 message Review {
@@ -49,8 +49,6 @@ message Deal {
   repeated User reportedBy = 12;
   Category category = 13;
   repeated string photos = 14;
-  string updatedAt = 15;
-  string createdAt = 16;
 }
 
 message DealCreateRequest {
@@ -89,7 +87,6 @@ message DealUpdateRequest {
   repeated User reportedBy = 12;
   Category category = 13;
   repeated string photos = 14;
-  string userGuid = 15;
 }
 
 message DealUpdateResponse {
@@ -114,4 +111,13 @@ message DealListResponse {
   repeated Deal results = 1;
   int64 count = 2;
   common.Error errors = 3;
+}
+
+message DealDeleteRequest {
+  string guid = 1;
+}
+
+message DealDeleteResponse {
+  Deal result = 1;
+  common.Error errors = 2;
 }

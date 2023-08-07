@@ -8,4 +8,5 @@ service DealsService {
   rpc UpdateDeal(DealUpdateRequest) returns (DealUpdateResponse) {}
   rpc DetailDeal(DealDetailRequest) returns (DealDetailResponse) {}
   rpc ListDeal(DealListRequest) returns (DealListResponse) {}
+  rpc DeleteDeal(DealDeleteRequest) returns (DealDeleteResponse) {}
 }
