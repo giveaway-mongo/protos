@@ -24,11 +24,11 @@ message CategoryCreateResponse {
 }
 
 message CategoryUpdateRequest {
-  string user_guid = 1;
   string guid = 2;
-  string title = 3;
-  string description = 4;
-  string parentGuid = 5;
+  optional string user_guid = 1;
+  optional string title = 3;
+  optional string description = 4;
+  optional string parentGuid = 5;
 }
 
 message CategoryUpdateResponse {
@@ -37,7 +37,6 @@ message CategoryUpdateResponse {
 }
 
 message CategoryDeleteRequest {
-  string user_guid = 1;
   string guid = 2;
 }
 
