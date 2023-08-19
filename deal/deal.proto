@@ -49,8 +49,6 @@ message Deal {
   repeated User reportedBy = 12;
   Category category = 13;
   repeated string photos = 14;
-  string updatedAt = 15;
-  string createdAt = 16;
 }
 
 message DealCreateRequest {
@@ -76,20 +74,20 @@ message DealCreateResponse {
 
 message DealUpdateRequest {
   string guid = 1;
-  string title = 2;
-  string description = 3;
-  string contactMethod = 4;
-  string activeUntil = 5;
-  string type = 6;
-  string status = 7;
-  User author = 8;
-  User buyer = 9;
+  optional string title = 2;
+  optional string description = 3;
+  optional string contactMethod = 4;
+  optional string activeUntil = 5;
+  optional string type = 6;
+  optional string status = 7;
+  optional User author = 8;
+  optional User buyer = 9;
   repeated Bid bids = 10;
   repeated Review reviews = 11;
   repeated User reportedBy = 12;
-  Category category = 13;
+  optional Category category = 13;
   repeated string photos = 14;
-  string userGuid = 15;
+  optional string userGuid = 15;
 }
 
 message DealUpdateResponse {
